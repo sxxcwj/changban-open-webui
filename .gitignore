@@ -1,0 +1,13 @@
+# 数据与密钥，切勿提交
+open-webui-data/
+data/
+models/
+*.db
+*.sqlite
+*.sqlite3
+*.key
+*.pem
+.env
+.webui_secret_key
+*.log
+.DS_Store

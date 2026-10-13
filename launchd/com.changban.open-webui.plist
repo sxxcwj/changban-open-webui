@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.changban.open-webui</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>$HOME/.local/bin/open-webui</string>
+    <string>serve</string>
+    <string>--port</string>
+    <string>8080</string>
+  </array>
+  <key>WorkingDirectory</key><string>$HOME/open-webui-data</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>$HOME/open-webui-data/server.log</string>
+  <key>StandardErrorPath</key><string>$HOME/open-webui-data/server.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>DATA_DIR</key><string>$HOME/open-webui-data</string>
+    <key>HF_ENDPOINT</key><string>https://hf-mirror.com</string>
+    <key>RAG_EMBEDDING_MODEL</key><string>$HOME/open-webui-data/models/all-MiniLM-L6-v2</string>
+    <key>HF_HUB_OFFLINE</key><string>1</string>
+    <key>OFFLINE_MODE</key><string>true</string>
+    <key>ENABLE_PERSISTENT_CONFIG</key><string>false</string>
+    <key>WEBUI_NAME</key><string>长伴咨询</string>
+  </dict>
+</dict>
+</plist>
