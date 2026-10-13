@@ -1,0 +1,25 @@
+[Unit]
+Description=Open WebUI (长伴咨询)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=openwebui
+Group=openwebui
+WorkingDirectory=/opt/open-webui
+EnvironmentFile=/etc/open-webui/secret.env
+Environment=DATA_DIR=/opt/open-webui/data
+Environment=RAG_EMBEDDING_MODEL=/opt/open-webui/data/models/all-MiniLM-L6-v2
+Environment=HF_HUB_OFFLINE=1
+Environment=WEBUI_NAME=长伴咨询
+Environment=ENABLE_SIGNUP=true
+Environment=ENABLE_OLLAMA_API=false
+Environment=HOME=/opt/open-webui
+ExecStart=/opt/open-webui/venv/bin/open-webui serve --host 127.0.0.1 --port 8081
+Restart=always
+RestartSec=5
+MemoryMax=1200M
+
+[Install]
+WantedBy=multi-user.target
+
